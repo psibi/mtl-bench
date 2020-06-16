@@ -1,6 +1,6 @@
 # mtl-bench
 
-Tring out the mtl and baseline benchmarks stated in [Alexis King's
+Trying out the mtl and baseline benchmarks stated in [Alexis King's
 talk](https://www.youtube.com/watch?v=0jI-AlWEwYI "Alexis King's
 talk"). This is the result I get:
 
