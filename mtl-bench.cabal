@@ -1,0 +1,70 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ea99f17cdd97b2bdec19d326239d30c6bb309a90cb5a2789e85a12a6cde34d76
+
+name:           mtl-bench
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/psibi/mtl-bench#readme>
+homepage:       https://github.com/psibi/mtl-bench#readme
+bug-reports:    https://github.com/psibi/mtl-bench/issues
+author:         Sibi Prabakaran
+maintainer:     sibi@psibi.in
+copyright:      Sibi Prabakaran
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/psibi/mtl-bench
+
+library
+  exposed-modules:
+      Lib
+      MultiModule
+      SingleModuleBase
+  other-modules:
+      Paths_mtl_bench
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , mtl
+  default-language: Haskell2010
+
+test-suite mtl-bench-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mtl_bench
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , mtl
+    , mtl-bench
+  default-language: Haskell2010
+
+benchmark mtlbench
+  type: exitcode-stdio-1.0
+  main-is: main.hs
+  other-modules:
+      Paths_mtl_bench
+  hs-source-dirs:
+      bench
+  ghc-options: -O2
+  build-depends:
+      base >=4.7 && <5
+    , deepseq
+    , gauge
+    , mtl
+    , mtl-bench
+  default-language: Haskell2010
