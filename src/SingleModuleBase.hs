@@ -16,6 +16,16 @@ program = do
   then return n
   else put (n - 1) >> program
 
+programStateT :: StateT Int IO Int
+programStateT = do
+  n <- get
+  if n <= 0
+  then return n
+  else put (n - 1) >> program
+
+countDownStateT :: Int -> IO (Int, Int)
+countDownStateT initial = runStateT programStateT initial
+
 countDownBase :: Int -> (Int, Int)
 countDownBase = programBase
 
